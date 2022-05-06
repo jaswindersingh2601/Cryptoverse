@@ -15,8 +15,7 @@ const Cryptocurrencies = ({simplified}) => {
     useEffect(() => {
         const filteredData = cryptosList?.data?.coins.filter((coin) => coin.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
-        setCryptos(filteredData)
-
+        setCryptos(filteredData);
     }, [cryptosList, setSearchTerm])
 
     if (isFetching) return "<Loadering />";
@@ -24,7 +23,7 @@ const Cryptocurrencies = ({simplified}) => {
     return (
         <>
             <div className={"search-crypto"}>
-                <Input placeholder={"Search Cryptocurrency"} onChange={(e) => setSearchTearm(e.target.value)}/>
+                <Input placeholder={"Search Cryptocurrency"} onChange={(e) => setSearchTerm(e.target.value)}/>
             </div>
 
             <Row gutter={[32, 32]} className={"crypto-card-container"}>
